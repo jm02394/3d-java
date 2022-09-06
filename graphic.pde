@@ -94,6 +94,9 @@ void draw() {
     //renderPool.addAll(Arrays.asList(cube.translate(new Coord(1, 0, 0)).tris));
     cube.transform(3).translate(new Coord(-3, 0, 0)).render();
     cube.translate(new Coord(1, 0, 0)).render();
+    cube.translate(new Coord(0, 0, 0)).render();
+    cube.translate(new Coord(-4, 0, 0)).render();
+    cube.translate(new Coord(2, 0, 0)).render();
 
     Collections.sort(renderPool);
 
@@ -107,6 +110,11 @@ void draw() {
     line(0, height/2, width, height/2);
     line(width/2, 0, width/2, height);
     strokeWeight(1);
+
+    fill(0);
+    textSize(20);
+    text(frameRate, 5, 20);
+    fill(255);
 }
 
 public class Point {
@@ -203,7 +211,7 @@ public class Coord {
         float za = atan((y - to.y) / (x - to.x));
         //if (to.y < y) za = za;
 
-        return new Coord(xa, ya, za);
+        return new Coord(-20, ya, 0);
     }
 }
 
